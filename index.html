@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-ORFT Project Page (Anonymous)</title>
+    <meta
+      name="description"
+      content="Anonymous project page for Multi-ORFT: stable online reinforcement fine-tuning for multi-agent diffusion planning in cooperative driving."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="top">
+      <div class="container top-inner">
+        <div class="badge" aria-label="Anonymity notice">
+          Anonymous project page for peer review
+        </div>
+        <nav class="nav" aria-label="Page navigation">
+          <a href="#overview">Overview</a>
+          <a href="#method">Method</a>
+          <a href="#videos">Videos</a>
+          <a href="#results">Results</a>
+          <a href="#ablations">Ablations</a>
+          <a href="#resources">Resources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero reveal" id="overview">
+        <div class="container hero-title-wrap">
+          <h1 class="hero-title">
+            <span class="smallcaps">Multi-ORFT</span>: Stable Online
+            Reinforcement Fine-Tuning for Multi-Agent Diffusion Planning in
+            Cooperative Driving
+          </h1>
+          <p class="hero-subline">
+            TL;DR: We couple scene-conditioned diffusion pre-training with
+            online VG-GRPO post-training to improve closed-loop safety and
+            efficiency in multi-agent cooperative driving.
+          </p>
+          <div class="resource-row hero-resource-row" id="resources">
+            <a class="resource" href="assets/downloads/paper.pdf" download>
+              <span class="kicker">PDF</span>
+              <span class="title">Paper</span>
+            </a>
+            <div class="resource disabled" aria-disabled="true">
+              <span class="kicker">Code</span>
+              <span class="title">Coming Soon</span>
+            </div>
+            <a
+              class="resource"
+              href="https://waymo.com/open/"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="kicker">Database</span>
+              <span class="title">WOMD</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="method">
+        <div class="container">
+          <header class="section-head">
+            <h2>Method</h2>
+            <p class="muted">
+              Two-phase coupling: diffusion pre-training learns a multimodal
+              cooperative prior; online post-training (VG-GRPO) aligns it with
+              closed-loop safety and efficiency.
+            </p>
+          </header>
+
+          <div class="split method-split">
+            <div class="card method-card">
+              <h3>Pre-training: Multi-Agent Diffusion Prior</h3>
+              <p class="muted method-desc">
+                Dual-path scene conditioning combines cross-attention and
+                AdaLN-Zero for scene consistency in dense interactions.
+              </p>
+              <img
+                class="method-fig"
+                src="assets/fig/fig_architecture.png"
+                alt="Architecture of the multi-agent diffusion planner."
+                loading="lazy"
+              />
+              <p class="caption muted">
+                Fig. 1 (Pre-training): multi-agent diffusion planner with dual-path
+                scene conditioning.
+              </p>
+            </div>
+
+            <div class="card method-card">
+              <h3>Post-training: Online RL with VG-GRPO</h3>
+              <p class="muted method-desc">
+                Two-level MDP makes step-wise likelihood tractable; group-relative
+                updates improve stability under multi-agent non-stationarity.
+              </p>
+              <img
+                class="method-fig"
+                src="assets/fig/fig_rl_posttraining.png"
+                alt="Online RL post-training framework."
+                loading="lazy"
+              />
+              <p class="caption muted">
+                Fig. 2 (Post-training): online RL fine-tuning with VG-GRPO and KL
+                anchoring to the pre-training prior.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section reveal" id="videos">
+        <div class="container">
+          <header class="section-head">
+            <h2>Video Results</h2>
+            <p class="muted">
+              Three local videos are loaded from <code>assets/videos/</code>.
+              Local playback keeps anonymous review safe (no external embeds).
+            </p>
+          </header>
+
+          <div class="media-grid">
+            <figure
+              class="media-card"
+              data-expected-src="assets/videos/b08360dd801541f7-GRPO40-0802-3000演示.mp4"
+            >
+              <div class="missing-hint" aria-hidden="true">
+                Missing file:
+                <code>assets/videos/b08360dd801541f7-GRPO40-0802-3000演示.mp4</code>
+              </div>
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="assets/images/onroad.jpg"
+              >
+                <source
+                  src="assets/videos/b08360dd801541f7-GRPO40-0802-3000演示.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>
+                <strong>GRPO Demonstration</strong>
+                <span class="muted"
+                  >Closed-loop interactive rollout after online post-training.</span
+                >
+              </figcaption>
+            </figure>
+
+            <figure
+              class="media-card"
+              data-expected-src="assets/videos/2d2af4ce25eba9db-GRPO40-0802-3000对比.mp4"
+            >
+              <div class="missing-hint" aria-hidden="true">
+                Missing file:
+                <code>assets/videos/2d2af4ce25eba9db-GRPO40-0802-3000对比.mp4</code>
+              </div>
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="assets/fig/fig_qualitative_pre_post.jpg"
+              >
+                <source
+                  src="assets/videos/2d2af4ce25eba9db-GRPO40-0802-3000对比.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>
+                <strong>GRPO Comparison</strong>
+                <span class="muted"
+                  >Side-by-side comparison to show policy refinement effects.</span
+                >
+              </figcaption>
+            </figure>
+
+            <figure
+              class="media-card"
+              data-expected-src="assets/videos/2d2af4ce25eba9db-DDPM20-30对比.mp4"
+            >
+              <div class="missing-hint" aria-hidden="true">
+                Missing file:
+                <code>assets/videos/2d2af4ce25eba9db-DDPM20-30对比.mp4</code>
+              </div>
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="assets/images/offroad.jpg"
+              >
+                <source
+                  src="assets/videos/2d2af4ce25eba9db-DDPM20-30对比.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>
+                <strong>DDPM Step Comparison</strong>
+                <span class="muted"
+                  >Comparison across denoising settings (20 vs. 30 steps).</span
+                >
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="results">
+        <div class="container">
+          <header class="section-head">
+            <h2>Closed-loop Results</h2>
+            <p class="muted">
+              Primary objectives: collision rate (CR), off-road rate (OR), average
+              speed (AS). Secondary diagnostics: ADE, Kin.
+            </p>
+          </header>
+
+          <div class="card">
+            <h3>WOMD Interactive Test Split</h3>
+            <div class="table-wrap">
+              <table class="metric-table" aria-label="Closed-loop benchmark table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>CR ↓</th>
+                    <th>OR ↓</th>
+                    <th>AS ↑</th>
+                    <th>ADE ↓</th>
+                    <th>Kin ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TrafficBotsV1.5</td>
+                    <td>2.74 ±0.21</td>
+                    <td>1.79 ±0.14</td>
+                    <td>8.03 ±0.48</td>
+                    <td>1.68 ±0.09</td>
+                    <td>0.26 ±0.02</td>
+                  </tr>
+                  <tr>
+                    <td>SMART-large</td>
+                    <td>2.22 ±0.09</td>
+                    <td>1.58 ±0.10</td>
+                    <td>8.34 ±0.30</td>
+                    <td>1.30 ±0.01</td>
+                    <td><strong>0.21 ±0.01</strong></td>
+                  </tr>
+                  <tr>
+                    <td>VBD</td>
+                    <td>2.46 ±0.14</td>
+                    <td>1.92 ±0.18</td>
+                    <td>8.08 ±0.52</td>
+                    <td>1.41 ±0.02</td>
+                    <td>0.24 ±0.01</td>
+                  </tr>
+                  <tr>
+                    <td>SMART-tiny-CLSFT</td>
+                    <td>2.10 ±0.10</td>
+                    <td>1.53 ±0.12</td>
+                    <td>8.47 ±0.44</td>
+                    <td><strong>1.23 ±0.03</strong></td>
+                    <td>0.25 ±0.02</td>
+                  </tr>
+                  <tr class="emph">
+                    <td><span class="smallcaps">Multi-ORFT</span></td>
+                    <td><strong>1.91 ±0.12</strong></td>
+                    <td><strong>1.36 ±0.08</strong></td>
+                    <td><strong>8.61 ±0.46</strong></td>
+                    <td>1.36 ±0.04</td>
+                    <td>0.32 ±0.03</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="caption muted">
+              Values are mean ± std over repeated closed-loop evaluations in the
+              same simulator configuration.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Effect of Post-training Strategy</h3>
+            <div class="table-wrap">
+              <table class="metric-table" aria-label="Post-training methods table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>CR ↓</th>
+                    <th>OR ↓</th>
+                    <th>AS ↑</th>
+                    <th>ADE ↓</th>
+                    <th>Kin ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pre-trained only</td>
+                    <td>2.02 ±0.11</td>
+                    <td>1.68 ±0.10</td>
+                    <td>8.36 ±0.42</td>
+                    <td>1.28 ±0.02</td>
+                    <td><strong>0.25 ±0.02</strong></td>
+                  </tr>
+                  <tr>
+                    <td>SFT</td>
+                    <td>1.99 ±0.07</td>
+                    <td>1.64 ±0.06</td>
+                    <td>8.37 ±0.36</td>
+                    <td><strong>1.15 ±0.015</strong></td>
+                    <td><strong>0.25 ±0.01</strong></td>
+                  </tr>
+                  <tr>
+                    <td>DPO</td>
+                    <td>1.95 ±0.13</td>
+                    <td>1.58 ±0.09</td>
+                    <td>8.15 ±0.39</td>
+                    <td>1.33 ±0.04</td>
+                    <td>0.27 ±0.01</td>
+                  </tr>
+                  <tr>
+                    <td>Offline RL</td>
+                    <td>2.16 ±0.09</td>
+                    <td>1.82 ±0.14</td>
+                    <td><strong>8.98 ±0.68</strong></td>
+                    <td>1.37 ±0.05</td>
+                    <td>0.26 ±0.02</td>
+                  </tr>
+                  <tr class="emph">
+                    <td>
+                      <span class="smallcaps">Multi-ORFT</span> (Online RL)
+                    </td>
+                    <td><strong>1.91 ±0.12</strong></td>
+                    <td><strong>1.36 ±0.08</strong></td>
+                    <td>8.61 ±0.46</td>
+                    <td>1.36 ±0.04</td>
+                    <td>0.32 ±0.03</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="split">
+            <div class="card">
+              <h3>Qualitative: Pre-training vs. Post-training</h3>
+              <img
+                class="result-fig"
+                src="assets/fig/fig_qualitative_pre_post.jpg"
+                alt="Qualitative comparison between pre-training and post-training."
+                loading="lazy"
+              />
+              <p class="caption muted">
+                Example rollout: online post-training improves conflict resolution
+                and recovers decisiveness with longer training.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Stability: Map Consistency (AdaLN-Zero)</h3>
+              <div class="img-pair" role="group" aria-label="AdaLN-Zero stability">
+                <figure>
+                  <img
+                    class="stability-fig"
+                    src="assets/images/offroad.jpg"
+                    alt="Without AdaLN-Zero: off-road drift in a sharp right turn."
+                    loading="lazy"
+                  />
+                  <figcaption class="muted">Without AdaLN-Zero</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    class="stability-fig"
+                    src="assets/images/onroad.jpg"
+                    alt="With AdaLN-Zero: on-road stable turn."
+                    loading="lazy"
+                  />
+                  <figcaption class="muted">With AdaLN-Zero</figcaption>
+                </figure>
+              </div>
+              <p class="caption muted">
+                Scene-conditioned modulation improves boundary adherence in dense
+                interactions, reducing off-road events.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="ablations">
+        <div class="container">
+          <header class="section-head">
+            <h2>Ablations</h2>
+            <p class="muted">
+              Compact summaries. Full details and protocols are in the paper PDF.
+            </p>
+          </header>
+
+          <div class="grid-3">
+            <div class="card">
+              <h3>AdaLN-Zero</h3>
+              <div class="table-wrap small">
+                <table class="metric-table" aria-label="AdaLN-Zero ablation">
+                  <thead>
+                    <tr>
+                      <th>Setting</th>
+                      <th>CR ↓</th>
+                      <th>OR ↓</th>
+                      <th>AS ↑</th>
+                      <th>ADE ↓</th>
+                      <th>Kin ↓</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>w/o AdaLN-Zero</td>
+                      <td>2.11</td>
+                      <td>1.99</td>
+                      <td><strong>8.40</strong></td>
+                      <td>1.30</td>
+                      <td>0.26</td>
+                    </tr>
+                    <tr class="emph">
+                      <td>with AdaLN-Zero</td>
+                      <td><strong>2.02</strong></td>
+                      <td><strong>1.68</strong></td>
+                      <td>8.36</td>
+                      <td>1.28</td>
+                      <td>0.25</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Post-training Data Composition</h3>
+              <div class="table-wrap small">
+                <table
+                  class="metric-table"
+                  aria-label="Post-training data composition ablation"
+                >
+                  <thead>
+                    <tr>
+                      <th>Dataset</th>
+                      <th>CR ↓</th>
+                      <th>OR ↓</th>
+                      <th>AS ↑</th>
+                      <th>ADE ↓</th>
+                      <th>Kin ↓</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>high-score</td>
+                      <td>1.95</td>
+                      <td><strong>1.34</strong></td>
+                      <td>8.53</td>
+                      <td><strong>1.30</strong></td>
+                      <td><strong>0.31</strong></td>
+                    </tr>
+                    <tr>
+                      <td>low-score</td>
+                      <td>2.18</td>
+                      <td>1.99</td>
+                      <td>8.22</td>
+                      <td>1.40</td>
+                      <td>0.37</td>
+                    </tr>
+                    <tr class="emph">
+                      <td>full</td>
+                      <td><strong>1.91</strong></td>
+                      <td>1.36</td>
+                      <td><strong>8.61</strong></td>
+                      <td>1.36</td>
+                      <td>0.32</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="muted"
+          >Anonymous project page. No external trackers or embeds.</span
+        >
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

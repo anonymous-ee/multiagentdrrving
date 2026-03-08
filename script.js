@@ -1,4 +1,7 @@
 (() => {
+  // Only enable reveal-hidden mode when JS is actually running.
+  document.documentElement.classList.add("js");
+
   // Staggered reveal on scroll (kept minimal and respectful of reduced-motion).
   const revealEls = Array.from(document.querySelectorAll(".reveal"));
   if ("IntersectionObserver" in window) {

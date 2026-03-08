@@ -324,6 +324,11 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.showcase-grid-first-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
 .media-card {
   position: relative;
   overflow: hidden;
@@ -562,13 +567,18 @@ h3 {
   padding: 24px 0 34px 0;
 }
 
-/* Reveal animation */
+/* Reveal animation. Keep content visible by default in case JS fails. */
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .reveal {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.reveal.is-visible {
+html.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 420ms ease, transform 420ms ease;
@@ -581,7 +591,9 @@ h3 {
     transition: none;
   }
   .reveal,
-  .reveal.is-visible {
+  .reveal.is-visible,
+  html.js .reveal,
+  html.js .reveal.is-visible {
     opacity: 1;
     transform: none;
     transition: none;
@@ -603,6 +615,9 @@ h3 {
   .showcase-grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .showcase-grid-first-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .grid-3 {
     grid-template-columns: 1fr;
   }
@@ -618,7 +633,8 @@ h3 {
 
 @media (max-width: 760px) {
   .showcase-grid-2,
-  .showcase-grid-3 {
+  .showcase-grid-3,
+  .showcase-grid-first-row {
     grid-template-columns: 1fr;
   }
   .video-group {

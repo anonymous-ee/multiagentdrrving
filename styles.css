@@ -481,20 +481,29 @@ h3 {
 }
 
 .img-pair img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: var(--radiusSm);
   border: 1px solid rgba(20, 24, 33, 0.12);
 }
 
 .method-fig {
   width: 100%;
-  max-height: 260px;
+  aspect-ratio: 16 / 9;
+  max-height: min(52vh, 360px);
   object-fit: contain;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: var(--radiusSm);
 }
 
 .result-fig {
   width: 100%;
-  max-height: 280px;
+  aspect-ratio: 16 / 9;
+  max-height: min(52vh, 360px);
   object-fit: contain;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: var(--radiusSm);
 }
 
 .stability-fig {
@@ -505,13 +514,13 @@ h3 {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 16px;
 }
 
 .resource-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
 }
 

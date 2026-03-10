@@ -47,9 +47,81 @@
       tryPlay();
     }
 
-    // Heuristic fallback: if nothing loads shortly after page load, show hint.
-    setTimeout(() => {
-      if (video.readyState === 0) markMissing();
-    }, 1200);
+  }
+
+  // Explicit fullscreen trigger for the main demo reel.
+  const fsButtons = Array.from(document.querySelectorAll("[data-fullscreen-target]"));
+  for (const btn of fsButtons) {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-fullscreen-target");
+      if (!targetId) return;
+      const media = document.getElementById(targetId);
+      if (!media) return;
+
+      if (typeof media.requestFullscreen === "function") {
+        media.requestFullscreen().catch(() => {});
+        return;
+      }
+      if (typeof media.webkitRequestFullscreen === "function") {
+        media.webkitRequestFullscreen();
+        return;
+      }
+      if (typeof media.webkitEnterFullscreen === "function") {
+        media.webkitEnterFullscreen();
+      }
+    });
+  }
+
+  // Auto-play the featured reel when it enters view. Browsers may reject
+  // autoplay with audio; if they do, leave it paused instead of muting it.
+  const demoReel = document.getElementById("demo-reel-video");
+  if (demoReel && "IntersectionObserver" in window) {
+    const forceAudible = () => {
+      demoReel.muted = false;
+      if (typeof demoReel.volume === "number") {
+        demoReel.volume = 1;
+      }
+    };
+
+    forceAudible();
+    demoReel.addEventListener("loadedmetadata", forceAudible, { once: true });
+
+    const inViewEnough = () => {
+      const rect = demoReel.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const visible = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+      const ratio = rect.height > 0 ? visible / rect.height : 0;
+      return ratio >= 0.55;
+    };
+
+    const tryPlayReel = () => {
+      const p = demoReel.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+
+    const reelObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.target !== demoReel) continue;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+            tryPlayReel();
+          } else if (entry.intersectionRatio <= 0.2 && !demoReel.paused) {
+            demoReel.pause();
+          }
+        }
+      },
+      { threshold: [0.2, 0.55, 0.8] }
+    );
+
+    reelObserver.observe(demoReel);
+
+    const tryPlayFromUserGesture = () => {
+      if (inViewEnough()) tryPlayReel();
+    };
+
+    window.addEventListener("wheel", tryPlayFromUserGesture, { passive: true });
+    window.addEventListener("touchstart", tryPlayFromUserGesture, { passive: true });
+    window.addEventListener("pointerdown", tryPlayFromUserGesture, { passive: true });
+    window.addEventListener("keydown", tryPlayFromUserGesture);
   }
 })();

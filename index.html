@@ -8,7 +8,7 @@
       name="description"
       content="Anonymous project page for Multi-ORFT: stable online reinforcement fine-tuning for multi-agent diffusion planning in cooperative driving."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260310c" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -35,16 +35,15 @@
         <div class="container hero-title-wrap">
           <h1 class="hero-title">
             <span class="smallcaps">Multi-ORFT</span>: Stable Online
-            Reinforcement Fine-Tuning for Multi-Agent Diffusion Planning in
-            Cooperative Driving
+            Reinforcement Fine-Tuning on Diffusion-Based Multi-Agent Planning
+            for Cooperative Driving
           </h1>
           <p class="hero-subline">
-            TL;DR: We couple scene-conditioned diffusion pre-training with
-            online VG-GRPO post-training to improve closed-loop safety and
-            efficiency in multi-agent cooperative driving.
+            Scene condition-enhanced diffusion pre-training with stable online
+            RL post-training for safer, more efficient cooperative driving.
           </p>
           <div class="resource-row hero-resource-row" id="resources">
-            <a class="resource" href="assets/downloads/paper.pdf" download>
+            <a class="resource resource-primary" href="assets/downloads/IROS2026%20(8).pdf" download>
               <span class="kicker">PDF</span>
               <span class="title">Paper</span>
             </a>
@@ -96,10 +95,10 @@
           <header class="section-head">
             <h2>Method</h2>
             <p class="muted">
-              Two-phase coupling: scene condition-enhanced diffusion pre-training
-              learns scene-consistent multimodal joint trajectories; stable
-              online RL post-training aligns it with closed-loop safety and
-              efficiency.
+              Two-phase framework: scene condition-enhanced diffusion
+              pre-training learns scene-consistent multimodal joint
+              trajectories; stable online RL post-training aligns it with
+              closed-loop safety and efficiency.
             </p>
           </header>
 
@@ -141,8 +140,8 @@
               <p class="caption muted">
                 The stable online RL post-training framework has three core
                 components: closed-loop policy rollouts, dense reward
-                evaluation, and variance-gated group relative policy
-                optimization (VG-GRPO).
+                evaluation, and our proposed variance-gated group relative
+                policy optimization (VG-GRPO).
               </p>
             </div>
           </div>
@@ -161,154 +160,46 @@
           </header>
 
           <div class="video-groups">
-            <section class="video-group">
-              <div class="group-head">
-                <h3>Demonstration Group</h3>
-                <p class="muted">
-                  Nine rollout clips showing representative closed-loop behaviors
-                  after training.
-                </p>
+            <section class="video-group demo-showcase">
+              <div class="group-head demo-showcase-head">
+                <div>
+                  <span class="section-kicker">Featured Reel</span>
+                  <h3>Multi-ORFT Showcase Reel</h3>
+                </div>
               </div>
-              <div class="showcase-grid showcase-grid-3">
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示1.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 1</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示2.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示2.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示2.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 2</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示3.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示3.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示3.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 3</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示4.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示4.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示4.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 4</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示5.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示5.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示5.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 5</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示6.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示6.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示6.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 6</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示7.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示7.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示7.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 7</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示8.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示8.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示8.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 8</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card media-card-compact" data-expected-src="assets/videos/演示9.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/演示9.mp4</code>
-                  </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/演示9.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Demo 9</strong>
-                    <span class="muted">Interactive rollout.</span>
-                  </figcaption>
-                </figure>
-              </div>
+              <figure class="media-card demo-reel-card" data-expected-src="assets/videos/multi-orft-demo-reel.mp4">
+                <div class="missing-hint" aria-hidden="true">
+                  Missing file:
+                  <code>assets/videos/multi-orft-demo-reel.mp4</code>
+                </div>
+                <video id="demo-reel-video" controls playsinline preload="auto" poster="assets/images/onroad.jpg">
+                  <source src="assets/videos/multi-orft-demo-reel.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="demo-reel-actions">
+                  <button
+                    class="btn primary small demo-reel-fullscreen"
+                    type="button"
+                    data-fullscreen-target="demo-reel-video"
+                  >
+                    Full Screen
+                  </button>
+                </div>
+              </figure>
             </section>
 
             <section class="video-group">
               <div class="group-head">
                 <h3>Comparison Group</h3>
                 <p class="muted">
+                  Pre-training vs post-training comparisons.
                   Pre-training can show undesirable behavior in some scenarios
                   due to imitation-learning limits. Post-training substantially
-                  improves closed-loop planning, safety, and efficiency.
+                  improves closed-loop planning, safety, and efficiency in
+                  challenging scenarios.
                 </p>
               </div>
-              <div class="showcase-grid showcase-grid-first-row">
+              <div class="showcase-grid showcase-grid-first-row comparison-first-row">
                 <figure class="media-card" data-expected-src="assets/videos/10700fd08e7fa7f9第一行-对比0不安全不效率（小的最左边）.mp4">
                   <div class="missing-hint" aria-hidden="true">
                     Missing file:
@@ -352,119 +243,163 @@
                   </figcaption>
                 </figure>
               </div>
-              <div class="showcase-grid showcase-grid-2">
-                <figure class="media-card" data-expected-src="assets/videos/7da908b45ecf7f7第二行-对比0.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/7da908b45ecf7f7第二行-对比0.mp4</code>
+              <div class="comparison-pairs comparison-pairs-prepost">
+                <section class="comparison-pair comparison-pair-gain">
+                  <div class="comparison-row-head">
+                    <span class="comparison-case">Case A</span>
+                    <span class="comparison-vs" aria-hidden="true">vs</span>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
-                    <source src="assets/videos/7da908b45ecf7f7第二行-对比0.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Pre-training</strong>
-                    <span class="muted">Paired case A.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/7da908b45ecf7f7第二行-对比1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/7da908b45ecf7f7第二行-对比1.mp4</code>
+                  <div class="showcase-grid showcase-grid-2 comparison-row">
+                    <figure class="media-card comparison-card comparison-card-base" data-expected-src="assets/videos/7da908b45ecf7f7第二行-对比0.mp4">
+                      <div class="comparison-badge comparison-badge-left">Base Model</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/7da908b45ecf7f7第二行-对比0.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
+                        <source src="assets/videos/7da908b45ecf7f7第二行-对比0.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Pre-training</strong>
+                        <span class="muted">Paired case A.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="media-card comparison-card comparison-card-post" data-expected-src="assets/videos/7da908b45ecf7f7第二行-对比1.mp4">
+                      <div class="comparison-badge comparison-badge-right">Incremental Gain</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/7da908b45ecf7f7第二行-对比1.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
+                        <source src="assets/videos/7da908b45ecf7f7第二行-对比1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Post-training</strong>
+                        <span class="muted">Paired case A.</span>
+                        <span class="gain-note">Online RL adds the cooperative improvement.</span>
+                      </figcaption>
+                    </figure>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
-                    <source src="assets/videos/7da908b45ecf7f7第二行-对比1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Post-training</strong>
-                    <span class="muted">Paired case A.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/dd96b90d51d22359-第三行对比0.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/dd96b90d51d22359-第三行对比0.mp4</code>
+                </section>
+                <section class="comparison-pair comparison-pair-gain">
+                  <div class="comparison-row-head">
+                    <span class="comparison-case">Case B</span>
+                    <span class="comparison-vs" aria-hidden="true">vs</span>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/dd96b90d51d22359-第三行对比0.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Pre-training</strong>
-                    <span class="muted">Paired case B.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/dd96b90d51d22359-第三行对比1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/dd96b90d51d22359-第三行对比1.mp4</code>
+                  <div class="showcase-grid showcase-grid-2 comparison-row">
+                    <figure class="media-card comparison-card comparison-card-base" data-expected-src="assets/videos/dd96b90d51d22359-第三行对比0.mp4">
+                      <div class="comparison-badge comparison-badge-left">Base Model</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/dd96b90d51d22359-第三行对比0.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
+                        <source src="assets/videos/dd96b90d51d22359-第三行对比0.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Pre-training</strong>
+                        <span class="muted">Paired case B.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="media-card comparison-card comparison-card-post" data-expected-src="assets/videos/dd96b90d51d22359-第三行对比1.mp4">
+                      <div class="comparison-badge comparison-badge-right">Incremental Gain</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/dd96b90d51d22359-第三行对比1.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
+                        <source src="assets/videos/dd96b90d51d22359-第三行对比1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Post-training</strong>
+                        <span class="muted">Paired case B.</span>
+                        <span class="gain-note">Online RL adds the cooperative improvement.</span>
+                      </figcaption>
+                    </figure>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/dd96b90d51d22359-第三行对比1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Post-training</strong>
-                    <span class="muted">Paired case B.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/80afca2d422becb8-第四行对比0.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/80afca2d422becb8-第四行对比0.mp4</code>
+                </section>
+                <section class="comparison-pair comparison-pair-gain">
+                  <div class="comparison-row-head">
+                    <span class="comparison-case">Case C</span>
+                    <span class="comparison-vs" aria-hidden="true">vs</span>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
-                    <source src="assets/videos/80afca2d422becb8-第四行对比0.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Pre-training</strong>
-                    <span class="muted">Paired case C.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/80afca2d422becb8-第四行对比1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/80afca2d422becb8-第四行对比1.mp4</code>
+                  <div class="showcase-grid showcase-grid-2 comparison-row">
+                    <figure class="media-card comparison-card comparison-card-base" data-expected-src="assets/videos/80afca2d422becb8-第四行对比0.mp4">
+                      <div class="comparison-badge comparison-badge-left">Base Model</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/80afca2d422becb8-第四行对比0.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
+                        <source src="assets/videos/80afca2d422becb8-第四行对比0.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Pre-training</strong>
+                        <span class="muted">Paired case C.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="media-card comparison-card comparison-card-post" data-expected-src="assets/videos/80afca2d422becb8-第四行对比1.mp4">
+                      <div class="comparison-badge comparison-badge-right">Incremental Gain</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/80afca2d422becb8-第四行对比1.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
+                        <source src="assets/videos/80afca2d422becb8-第四行对比1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Post-training</strong>
+                        <span class="muted">Paired case C.</span>
+                        <span class="gain-note">Online RL adds the cooperative improvement.</span>
+                      </figcaption>
+                    </figure>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
-                    <source src="assets/videos/80afca2d422becb8-第四行对比1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Post-training</strong>
-                    <span class="muted">Paired case C.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/9ce7fddf20fe8730-第五行对比0.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/9ce7fddf20fe8730-第五行对比0.mp4</code>
+                </section>
+                <section class="comparison-pair comparison-pair-gain">
+                  <div class="comparison-row-head">
+                    <span class="comparison-case">Additional Case</span>
+                    <span class="comparison-vs" aria-hidden="true">vs</span>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
-                    <source src="assets/videos/9ce7fddf20fe8730-第五行对比0.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Pre-training</strong>
-                    <span class="muted">Additional paired scenario.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/9ce7fddf20fe8730-第五行对比1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/9ce7fddf20fe8730-第五行对比1.mp4</code>
+                  <div class="showcase-grid showcase-grid-2 comparison-row">
+                    <figure class="media-card comparison-card comparison-card-base" data-expected-src="assets/videos/9ce7fddf20fe8730-第五行对比0.mp4">
+                      <div class="comparison-badge comparison-badge-left">Base Model</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/9ce7fddf20fe8730-第五行对比0.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
+                        <source src="assets/videos/9ce7fddf20fe8730-第五行对比0.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Pre-training</strong>
+                        <span class="muted">Additional paired scenario.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="media-card comparison-card comparison-card-post" data-expected-src="assets/videos/9ce7fddf20fe8730-第五行对比1.mp4">
+                      <div class="comparison-badge comparison-badge-right">Incremental Gain</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/9ce7fddf20fe8730-第五行对比1.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
+                        <source src="assets/videos/9ce7fddf20fe8730-第五行对比1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>Post-training</strong>
+                        <span class="muted">Additional paired scenario.</span>
+                        <span class="gain-note">Online RL adds the cooperative improvement.</span>
+                      </figcaption>
+                    </figure>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/fig/fig_qualitative_pre_post.jpg">
-                    <source src="assets/videos/9ce7fddf20fe8730-第五行对比1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>Post-training</strong>
-                    <span class="muted">Additional paired scenario.</span>
-                  </figcaption>
-                </figure>
+                </section>
               </div>
             </section>
 
@@ -475,63 +410,83 @@
                   AdaLN-Zero ablations with direct w/o vs with comparisons.
                 </p>
               </div>
-              <div class="showcase-grid showcase-grid-2">
-                <figure class="media-card" data-expected-src="assets/videos/2b39b2dd85cb81a9第二行-AdaLN对比0.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/2b39b2dd85cb81a9第二行-AdaLN对比0.mp4</code>
+              <div class="comparison-pairs">
+                <section class="comparison-pair">
+                  <div class="comparison-row-head">
+                    <span class="comparison-case">Case A</span>
+                    <span class="comparison-vs" aria-hidden="true">vs</span>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
-                    <source src="assets/videos/2b39b2dd85cb81a9第二行-AdaLN对比0.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>w/o AdaLN-Zero</strong>
-                    <span class="muted">Ablation case A.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/2b39b2dd85cb81a9第一行-AdaLN对比1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/2b39b2dd85cb81a9第一行-AdaLN对比1.mp4</code>
+                  <div class="showcase-grid showcase-grid-2 comparison-row">
+                    <figure class="media-card comparison-card" data-expected-src="assets/videos/2b39b2dd85cb81a9第二行-AdaLN对比0.mp4">
+                      <div class="comparison-badge comparison-badge-left">Without</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/2b39b2dd85cb81a9第二行-AdaLN对比0.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
+                        <source src="assets/videos/2b39b2dd85cb81a9第二行-AdaLN对比0.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>w/o AdaLN-Zero</strong>
+                        <span class="muted">Ablation case A.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="media-card comparison-card" data-expected-src="assets/videos/2b39b2dd85cb81a9第一行-AdaLN对比1.mp4">
+                      <div class="comparison-badge comparison-badge-right">With</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/2b39b2dd85cb81a9第一行-AdaLN对比1.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
+                        <source src="assets/videos/2b39b2dd85cb81a9第一行-AdaLN对比1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>with AdaLN-Zero</strong>
+                        <span class="muted">Ablation case A.</span>
+                      </figcaption>
+                    </figure>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/offroad.jpg">
-                    <source src="assets/videos/2b39b2dd85cb81a9第一行-AdaLN对比1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>with AdaLN-Zero</strong>
-                    <span class="muted">Ablation case A.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/2d2af4ce25eba9db-AdaLN对比0.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/2d2af4ce25eba9db-AdaLN对比0.mp4</code>
+                </section>
+                <section class="comparison-pair">
+                  <div class="comparison-row-head">
+                    <span class="comparison-case">Case B</span>
+                    <span class="comparison-vs" aria-hidden="true">vs</span>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/2d2af4ce25eba9db-AdaLN对比0.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>w/o AdaLN-Zero</strong>
-                    <span class="muted">Ablation case B.</span>
-                  </figcaption>
-                </figure>
-                <figure class="media-card" data-expected-src="assets/videos/2d2af4ce25eba9db-AdaLN对比1.mp4">
-                  <div class="missing-hint" aria-hidden="true">
-                    Missing file:
-                    <code>assets/videos/2d2af4ce25eba9db-AdaLN对比1.mp4</code>
+                  <div class="showcase-grid showcase-grid-2 comparison-row">
+                    <figure class="media-card comparison-card" data-expected-src="assets/videos/2d2af4ce25eba9db-AdaLN对比0.mp4">
+                      <div class="comparison-badge comparison-badge-left">Without</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/2d2af4ce25eba9db-AdaLN对比0.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
+                        <source src="assets/videos/2d2af4ce25eba9db-AdaLN对比0.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>w/o AdaLN-Zero</strong>
+                        <span class="muted">Ablation case B.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="media-card comparison-card" data-expected-src="assets/videos/2d2af4ce25eba9db-AdaLN对比1.mp4">
+                      <div class="comparison-badge comparison-badge-right">With</div>
+                      <div class="missing-hint" aria-hidden="true">
+                        Missing file:
+                        <code>assets/videos/2d2af4ce25eba9db-AdaLN对比1.mp4</code>
+                      </div>
+                      <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
+                        <source src="assets/videos/2d2af4ce25eba9db-AdaLN对比1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <figcaption>
+                        <strong>with AdaLN-Zero</strong>
+                        <span class="muted">Ablation case B.</span>
+                      </figcaption>
+                    </figure>
                   </div>
-                  <video controls autoplay muted loop playsinline preload="auto" poster="assets/images/onroad.jpg">
-                    <source src="assets/videos/2d2af4ce25eba9db-AdaLN对比1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <figcaption>
-                    <strong>with AdaLN-Zero</strong>
-                    <span class="muted">Ablation case B.</span>
-                  </figcaption>
-                </figure>
+                </section>
               </div>
             </section>
           </div>
@@ -549,7 +504,7 @@
           </header>
 
           <div class="card">
-            <h3>WOMD Interactive Test Split</h3>
+            <h3>WOMD Testing Interactive Split</h3>
             <div class="table-wrap">
               <table class="metric-table" aria-label="Closed-loop benchmark table">
                 <thead>
@@ -674,8 +629,8 @@
             </div>
           </div>
 
-          <div class="split">
-            <div class="card">
+          <div class="split results-split">
+            <div class="card result-card qualitative-card">
               <h3>Qualitative: Pre-training vs. Post-training</h3>
               <img
                 class="result-fig"
@@ -683,14 +638,14 @@
                 alt="Qualitative comparison between pre-training and post-training."
                 loading="lazy"
               />
-              <p class="caption muted">
+              <p class="caption muted qualitative-caption">
                 Example rollout: online post-training improves conflict
                 resolution (safety) and overall traffic progress (efficiency)
                 with longer training.
               </p>
             </div>
 
-            <div class="card">
+            <div class="card result-card stability-card">
               <h3>Stability: Road Consistency (AdaLN-Zero)</h3>
               <div class="img-pair" role="group" aria-label="AdaLN-Zero stability">
                 <figure>
@@ -712,7 +667,7 @@
                   <figcaption class="muted">With AdaLN-Zero</figcaption>
                 </figure>
               </div>
-              <p class="caption muted">
+              <p class="caption muted qualitative-caption">
                 AdaLN-Zero scene-conditioned modulation improves boundary
                 adherence in dense interactions, reducing off-road events.
               </p>
@@ -766,6 +721,63 @@
                 </table>
               </div>
             </div>
+
+            <div class="card">
+              <h3>VG-GRPO</h3>
+              <div class="table-wrap small">
+                <table class="metric-table" aria-label="VG-GRPO ablation table">
+                  <thead>
+                    <tr>
+                      <th>Gating std1/std2</th>
+                      <th>Collapse step</th>
+                      <th>CR ↓</th>
+                      <th>OR ↓</th>
+                      <th>AS ↑</th>
+                      <th>ADE ↓</th>
+                      <th>Kin ↓</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>w/o gating</td>
+                      <td>≈ 0.5M</td>
+                      <td>2.15</td>
+                      <td>2.03</td>
+                      <td>8.05</td>
+                      <td>1.74</td>
+                      <td>0.40</td>
+                    </tr>
+                    <tr class="emph">
+                      <td>0.03/0.06</td>
+                      <td>-</td>
+                      <td><strong>1.89</strong></td>
+                      <td><strong>1.36</strong></td>
+                      <td><strong>8.61</strong></td>
+                      <td>1.36</td>
+                      <td>0.32</td>
+                    </tr>
+                    <tr>
+                      <td>0.00/0.06</td>
+                      <td>≈ 2.0M</td>
+                      <td>2.01</td>
+                      <td>1.57</td>
+                      <td>8.42</td>
+                      <td>1.42</td>
+                      <td>0.30</td>
+                    </tr>
+                    <tr>
+                      <td>0.03/0.09</td>
+                      <td>-</td>
+                      <td>1.96</td>
+                      <td>1.50</td>
+                      <td>8.49</td>
+                      <td><strong>1.30</strong></td>
+                      <td><strong>0.29</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -780,6 +792,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260310c"></script>
   </body>
 </html>

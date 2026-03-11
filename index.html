@@ -95,7 +95,7 @@
           <header class="section-head">
             <h2>Method</h2>
             <p class="muted">
-              Two-phase pipeline: condition-enhanced diffusion
+              Overall pipeline: condition-enhanced diffusion
               pre-training learns scene-consistent multimodal joint
               trajectories; stable online RL post-training aligns it with
               closed-loop safety and efficiency.
@@ -116,9 +116,8 @@
                 loading="lazy"
               />
               <p class="caption muted">
-                Architecture of the multi-agent diffusion planner. A symmetric
-                scene encoder captures relational context with
-                query-centric self-attention, and a denoising decoder generates
+                Architecture of the multi-agent diffusion planner. A scene encoder 
+                captures context token relations in a symmetric manner, and a denoising decoder generates
                 joint multi-agent plans via inter-agent attention and
                 scene-conditioned generation, augmented by AdaLN-Zero for
                 stable conditional modulation and constraint enforcement.

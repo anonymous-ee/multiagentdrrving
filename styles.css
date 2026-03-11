@@ -598,23 +598,23 @@ h3 {
   box-shadow: 0 14px 32px rgba(20, 24, 33, 0.28);
 }
 
-.comparison-pairs-prepost .comparison-card figcaption strong {
+.comparison-card figcaption strong {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.01em;
 }
 
-.comparison-pairs-prepost .comparison-card figcaption .muted {
+.comparison-card figcaption .muted {
   font-size: 16px;
   line-height: 1.45;
 }
 
-.comparison-pairs-prepost .comparison-card-post figcaption strong {
+.comparison-card-post figcaption strong {
   color: #0f5132;
   font-weight: 900;
 }
 
-.comparison-pairs-prepost .comparison-card-post figcaption .muted {
+.comparison-card-post figcaption .muted {
   color: rgba(20, 24, 33, 0.82);
   font-weight: 600;
 }

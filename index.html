@@ -117,7 +117,7 @@
               />
               <p class="caption muted">
                 Architecture of the multi-agent diffusion planner. A symmetric
-                scene encoder captures local relational context with
+                scene encoder captures relational context with
                 query-centric self-attention, and a denoising decoder generates
                 joint multi-agent plans via inter-agent attention and
                 scene-conditioned generation, augmented by AdaLN-Zero for
@@ -192,7 +192,7 @@
               <div class="group-head">
                 <h3>Comparison Group</h3>
                 <p class="muted">
-                  Pre-training vs post-training comparisons.
+                  Pre-training vs post-training.
                   Pre-training can show undesirable behavior in some scenarios
                   due to imitation-learning limits. Post-training substantially
                   improves closed-loop planning, safety, and efficiency in
@@ -552,7 +552,7 @@
                   </tr>
                   <tr class="emph">
                     <td><span class="smallcaps">Multi-ORFT</span></td>
-                    <td><strong>1.91 ±0.12</strong></td>
+                    <td><strong>1.89 ±0.12</strong></td>
                     <td><strong>1.36 ±0.08</strong></td>
                     <td><strong>8.61 ±0.46</strong></td>
                     <td>1.36 ±0.04</td>
@@ -584,7 +584,7 @@
                 <tbody>
                   <tr>
                     <td>Pre-trained only</td>
-                    <td>2.02 ±0.11</td>
+                    <td>2.04 ±0.11</td>
                     <td>1.68 ±0.10</td>
                     <td>8.36 ±0.42</td>
                     <td>1.28 ±0.02</td>
@@ -592,7 +592,7 @@
                   </tr>
                   <tr>
                     <td>SFT</td>
-                    <td>1.99 ±0.07</td>
+                    <td>2.01 ±0.07</td>
                     <td>1.64 ±0.06</td>
                     <td>8.37 ±0.36</td>
                     <td><strong>1.15 ±0.015</strong></td>
@@ -600,7 +600,7 @@
                   </tr>
                   <tr>
                     <td>DPO</td>
-                    <td>1.95 ±0.13</td>
+                    <td>1.97 ±0.13</td>
                     <td>1.58 ±0.09</td>
                     <td>8.15 ±0.39</td>
                     <td>1.33 ±0.04</td>
@@ -608,7 +608,7 @@
                   </tr>
                   <tr>
                     <td>Offline RL</td>
-                    <td>2.16 ±0.09</td>
+                    <td>2.18 ±0.09</td>
                     <td>1.82 ±0.14</td>
                     <td><strong>8.98 ±0.68</strong></td>
                     <td>1.37 ±0.05</td>
@@ -618,7 +618,7 @@
                     <td>
                       <span class="smallcaps">Multi-ORFT</span> (Online RL)
                     </td>
-                    <td><strong>1.91 ±0.12</strong></td>
+                    <td><strong>1.89 ±0.12</strong></td>
                     <td><strong>1.36 ±0.08</strong></td>
                     <td>8.61 ±0.46</td>
                     <td>1.36 ±0.04</td>
@@ -704,14 +704,14 @@
                     <tr>
                       <td>w/o AdaLN-Zero</td>
                       <td>2.11</td>
-                      <td>1.99</td>
+                      <td>2.05</td>
                       <td><strong>8.40</strong></td>
                       <td>1.30</td>
                       <td>0.26</td>
                     </tr>
                     <tr class="emph">
                       <td>with AdaLN-Zero</td>
-                      <td><strong>2.02</strong></td>
+                      <td><strong>2.04</strong></td>
                       <td><strong>1.68</strong></td>
                       <td>8.36</td>
                       <td>1.28</td>
